@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
       <div className="container space-y-5 sm:space-y-8">
         <Title title="Kenapa Memilih Kami?" className="text-primary" />
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-x-1 md:gap-8">
           {whyChooseUsData.map((item, index) => (
             <WhyChooseUsCard
               key={index}
