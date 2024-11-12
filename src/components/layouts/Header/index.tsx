@@ -1,12 +1,11 @@
 "use client";
-
-import Logo from "@/components/common/Logo";
 import NavLinks from "./NavLinks";
 import MobileMenu from "./MobileMenu";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/common/Logo";
 
-const Header = ({ children }: { children?: React.ReactNode }) => {
+const Header = () => {
   const [scroll, setScroll] = useState<boolean>(false);
 
   useEffect(() => {
@@ -31,13 +30,11 @@ const Header = ({ children }: { children?: React.ReactNode }) => {
         scroll && "bg-background z-50 shadow-md transition-all duration-300"
       )}>
       <div className="container h-16 flex items-center justify-between">
-        <div className="flex items-center gap-10">
+        <div>
           <Logo />
-
-          <NavLinks className="hidden lg:flex" />
         </div>
 
-        <div className="hidden lg:flex">{children}</div>
+        <NavLinks className="hidden lg:flex" />
 
         <MobileMenu />
       </div>

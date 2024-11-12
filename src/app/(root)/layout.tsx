@@ -1,13 +1,17 @@
+import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
-import AuthHeader from "@/components/layouts/Header/AuthHeader";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <Header>
-        <AuthHeader />
-      </Header>
+      <Header />
       {children}
+      <Footer />
     </div>
   );
 };

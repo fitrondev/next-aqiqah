@@ -31,7 +31,7 @@ const Hero = () => {
 
           <div className="relative size-full lg:flex-1 flex items-center justify-center">
             <Image
-              src={"/hero.png"}
+              src={"/images/hero.png"}
               alt=""
               width={100}
               height={300}

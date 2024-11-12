@@ -5,7 +5,7 @@ import Title from "@/components/common/Title";
 
 const Testimonial = () => {
   return (
-    <section className="py-5 lg:py-10">
+    <section id="testimonial" className="py-5 lg:py-10">
       <div className="container space-y-5 sm:space-y-8">
         <Title
           title="Testimonial"

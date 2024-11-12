@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { config } from "@/config";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -9,14 +10,18 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Aqiqah Lombok",
+  title: {
+    absolute: config.blog.metadata.title.absolute,
+    default: config.blog.metadata.title.default,
+    template: config.blog.metadata.title.template,
+  },
   description:
-    "Catering Aqiqah Siap Saji Yang Membantu 2.250+ Keluarga Tunaikan Aqiqah Tanpa Ribet",
+    "Harga kambing di Aqiqah Lombok juga sangat terjangkau, mulai dari 3 juta saja Ayah & Bunda sudah bisa menunaikan ibadah aqiqah.",
   icons: {
     icon: [
       {
-        url: "/logo3.png",
-        href: "/logo3.png",
+        url: "/images/logo3.png",
+        href: "/images/logo3.png",
       },
     ],
   },

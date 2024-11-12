@@ -12,6 +12,7 @@ type NavLinksProps = {
 
 const NavLinks = ({ className, classNameLink }: NavLinksProps) => {
   const pathname = usePathname();
+
   return (
     <nav className={cn("flex items-center gap-4", className)}>
       {navLinks.map((item, index) => (

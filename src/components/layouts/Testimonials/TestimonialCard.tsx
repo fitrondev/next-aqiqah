@@ -34,8 +34,8 @@ const TestimonialCard = ({
 
       <CardFooter className="flex items-center gap-4 px-6 py-4 bg-muted/50">
         <Avatar>
-          <AvatarImage src={avatarSrc} />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src={avatarSrc} loading="lazy" />
+          <AvatarFallback>AL</AvatarFallback>
         </Avatar>
         <div>
           <p className="font-semibold">{author || "Anonymous"}</p>
