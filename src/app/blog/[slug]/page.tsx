@@ -2,28 +2,32 @@ import { formatDate } from "@/lib/formatDate";
 import { wisp } from "@/lib/wisp";
 import sanitize, { defaults } from "sanitize-html";
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: Params;
-}) {
-  const result = await wisp.getPost(slug);
+// type Params = {
+//   slug: string;
+// };
 
-  if (!result || !result.post) {
-    return {
-      title: "Blog post not found",
-    };
-  }
+// export async function generateMetadata({
+//   params: { slug },
+// }: {
+//   params: Params;
+// }) {
+//   const result = await wisp.getPost(slug);
 
-  const { title, description } = result.post;
+//   if (!result || !result.post) {
+//     return {
+//       title: "Blog post not found",
+//     };
+//   }
 
-  return {
-    title,
-    description,
-  };
-}
+//   const { title, description } = result.post;
 
-export const PostContent = ({ content }: { content: string }) => {
+//   return {
+//     title,
+//     description,
+//   };
+// }
+
+const PostContent = ({ content }: { content: string }) => {
   const sanitizedContent = sanitize(content, {
     allowedTags: [
       "b",
@@ -68,14 +72,10 @@ export const PostContent = ({ content }: { content: string }) => {
   );
 };
 
-type Params = {
-  slug: string;
-};
-export default async function BlogPost({
-  params: { slug },
-}: {
-  params: Params;
-}) {
+type TParams = Promise<{ slug: string }>;
+
+export default async function BlogPost({ params }: { params: TParams }) {
+  const { slug } = await params;
   const result = await wisp.getPost(slug);
   if (!result.post) return null;
   const { title, publishedAt, content, tags } = result.post;
