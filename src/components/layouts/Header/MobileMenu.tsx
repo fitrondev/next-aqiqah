@@ -13,7 +13,7 @@ const MobileMenu = () => {
   return (
     <Sheet>
       <SheetTrigger className="lg:hidden">
-        <AlignJustify className="size-5" />
+        <AlignJustify className="size-7" />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="hidden">
