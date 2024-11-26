@@ -2,30 +2,26 @@ import { formatDate } from "@/lib/formatDate";
 import { wisp } from "@/lib/wisp";
 import sanitize, { defaults } from "sanitize-html";
 
-// type Params = {
-//   slug: string;
-// };
+type TParams = Promise<{ slug: string }>;
 
-// export async function generateMetadata({
-//   params: { slug },
-// }: {
-//   params: Params;
-// }) {
-//   const result = await wisp.getPost(slug);
+export async function generateMetadata({ params }: { params: TParams }) {
+  const { slug } = await params; // Await params before destructuring.
 
-//   if (!result || !result.post) {
-//     return {
-//       title: "Blog post not found",
-//     };
-//   }
+  const result = await wisp.getPost(slug);
 
-//   const { title, description } = result.post;
+  if (!result || !result.post) {
+    return {
+      title: "Blog post not found",
+    };
+  }
 
-//   return {
-//     title,
-//     description,
-//   };
-// }
+  const { title, description } = result.post;
+
+  return {
+    title,
+    description,
+  };
+}
 
 const PostContent = ({ content }: { content: string }) => {
   const sanitizedContent = sanitize(content, {
@@ -72,8 +68,6 @@ const PostContent = ({ content }: { content: string }) => {
   );
 };
 
-type TParams = Promise<{ slug: string }>;
-
 export default async function BlogPost({ params }: { params: TParams }) {
   const { slug } = await params;
   const result = await wisp.getPost(slug);
@@ -81,22 +75,24 @@ export default async function BlogPost({ params }: { params: TParams }) {
   const { title, publishedAt, content, tags } = result.post;
 
   return (
-    <section>
-      <div className="container">
-        <div className="prose lg:prose-xl dark:prose-invert mx-auto lg:prose-h1:text-4xl mb-10 lg:mt-10 break-words">
-          <h1>{title}</h1>
+    <>
+      <section>
+        <div className="container">
+          <div className="prose lg:prose-xl dark:prose-invert mx-auto lg:prose-h1:text-4xl mb-10 lg:mt-10 break-words">
+            <h1>{title}</h1>
 
-          <PostContent content={content} />
-          <div className="mt-10 opacity-40 text-sm">
-            {tags.map((tag) => (
-              <span key={tag.id}>#{tag.name}</span>
-            ))}
-          </div>
-          <div className="text-sm opacity-40 mt-4">
-            {formatDate(publishedAt ?? new Date())}
+            <PostContent content={content} />
+            <div className="mt-10 opacity-40 text-sm">
+              {tags.map((tag) => (
+                <span key={tag.id}>#{tag.name} </span>
+              ))}
+            </div>
+            <div className="text-sm opacity-40 mt-4">
+              {formatDate(publishedAt ?? new Date())}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
