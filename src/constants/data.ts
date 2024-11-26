@@ -1,3 +1,23 @@
+export const contactData = [
+  {
+    title: "Alamat",
+    desc: "BTN Griya Pesona Alam Blok BJ 02, Kabupaten Lombok Barat, Nusa Tenggara Barat",
+  },
+  {
+    title: "Telepon",
+    desc: "087769171945",
+  },
+  {
+    title: "Email",
+    desc: "aqiqahlombok@gmail.com",
+  },
+  {
+    title: "Jam Kerja",
+    desc: "Senin - Selasa : 07:00 - 22:00",
+    desc2: "Rabu - Sabtu : Buka 24 jam",
+  },
+];
+
 export const navLinks = [
   {
     title: "Home",
@@ -13,7 +33,7 @@ export const navLinks = [
   },
   {
     title: "Testimonial",
-    href: "#testimonial",
+    href: "/testimonials",
   },
   {
     title: "Blog",
@@ -209,5 +229,80 @@ export const questionsData = [
     question: "Apa kambing sesuai syariat?",
     answer:
       "Ya betul, usia kambing 1 tahun lebih dan pastinya sehat tanpa cacat.",
+  },
+];
+
+export const galleryData = [
+  {
+    href: "/images/gallery/Gallery1.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery2.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery3.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery4.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery5.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery6.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery7.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery7.jpg",
+    alt: "Paket Aqiqah Lombok Prasmanan",
+  },
+  {
+    href: "/images/gallery/Gallery8.jpg",
+    alt: "Paket Aqiqah Lombok Sate",
+  },
+  {
+    href: "/images/gallery/Gallery9.jpg",
+    alt: "Paket Aqiqah Lombok Penarak",
+  },
+  {
+    href: "/images/gallery/Gallery10.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Box",
+  },
+  {
+    href: "/images/gallery/Gallery11.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Kotak",
+  },
+  {
+    href: "/images/gallery/Gallery12.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Box",
+  },
+  {
+    href: "/images/gallery/Gallery13.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Box",
+  },
+  {
+    href: "/images/gallery/Gallery14.jpg",
+    alt: "Paket Aqiqah Lombok Gulai",
+  },
+  {
+    href: "/images/gallery/Gallery15.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Kebuli",
+  },
+  {
+    href: "/images/gallery/Gallery16.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Kebuli",
+  },
+  {
+    href: "/images/gallery/Gallery17.jpg",
+    alt: "Paket Aqiqah Lombok Nasi Kebuli",
   },
 ];
