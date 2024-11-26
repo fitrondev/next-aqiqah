@@ -23,7 +23,7 @@ const Hero = () => {
             <div>
               <Button asChild>
                 <Link href="/aqiqah">
-                  Order Sekarang <FaWhatsapp className="size-5" />
+                  Pesan Sekarang <FaWhatsapp className="size-5" />
                 </Link>
               </Button>
             </div>
