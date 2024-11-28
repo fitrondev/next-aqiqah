@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -24,7 +23,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import { FaStar, FaWhatsapp } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
+import ButtonWA from "@/components/common/ButtonWA";
 
 interface PackageCardProps {
   title: string;
@@ -71,9 +71,7 @@ const PackageCard = ({
           <CardDescription className="mb-4">*{description}</CardDescription>
         </CardContent>
         <CardFooter className="p-4 pt-0 justify-end">
-          <Button className="w-full">
-            Pesan Sekarang <FaWhatsapp className="size-5" />
-          </Button>
+          <ButtonWA className="w-full" />
         </CardFooter>
       </Card>
 
