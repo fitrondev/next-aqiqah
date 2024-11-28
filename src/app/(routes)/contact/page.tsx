@@ -1,9 +1,7 @@
+import ButtonWA from "@/components/common/ButtonWA";
 import Map from "@/components/layouts/Maps/Map";
-import { Button } from "@/components/ui/button";
 import { contactData } from "@/constants/data";
 import { Metadata } from "next";
-import Link from "next/link";
-import { FaWhatsapp } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   title: "Kontak",
@@ -48,11 +46,7 @@ const ContactPage = () => {
                 Hubungi Kami
               </h4>
 
-              <Button asChild>
-                <Link href="/">
-                  Pesan Sekarang <FaWhatsapp className="size-5" />
-                </Link>
-              </Button>
+              <ButtonWA />
             </div>
           </div>
 
