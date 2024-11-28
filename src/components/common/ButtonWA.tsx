@@ -11,7 +11,7 @@ const ButtonWA = ({ className }: ButtonWAProps) => {
   return (
     <Button className={cn("", className)} asChild>
       <Link
-        href="//api.whatsapp.com/send?phone=+6287769171945text=Assalamu'alaikum%20
+        href="//api.whatsapp.com/send?phone=+6287769171945&text=Assalamu'alaikum%20
         mohon%20informasi%20paket%20aqiqah">
         Pesan Sekarang <FaWhatsapp className="size-5" />
       </Link>
