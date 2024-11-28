@@ -54,7 +54,7 @@ const BlogCard = ({ title, description, image, tags, slug }: BlogCardProps) => {
       </CardContent>
 
       <CardFooter className="p-3 pt-0 gap-2">
-        {tags.slice(0, 3).map((tag) => (
+        {tags.slice(0, 2).map((tag) => (
           <Badge key={tag} className="text-[10px] leading-5">
             #{tag}
           </Badge>
